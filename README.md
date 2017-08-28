@@ -22,4 +22,5 @@ This shows a basic Token based login flow using React and Node.
 
 # Pending Items
 1. Status for progress during logging in and logging out.
+2. Prevent Login button click for Network related failure.
 
