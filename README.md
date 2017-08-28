@@ -18,6 +18,7 @@ This shows a basic Token based login flow using React and Node.
 2. Install dependencies. Run > npm i
 3. Run > npm start
 4. Launch http://localhost:9001
+5. Sample username: Ajay ,  password: pass123
 
 # Pending Items
 1. Status for progress during logging in and logging out.
