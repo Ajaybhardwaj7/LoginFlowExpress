@@ -1,8 +1,8 @@
 # LoginFlowExpress
 This shows a basic Token based login flow using React and Node.
-# NPM v3.10.8
-# Node v6.11.2
-# Chrome v60.0.3112.101
+ NPM v3.10.8
+ Node v6.11.2
+ Chrome v60.0.3112.101
 
 # Server
 1. cd server dir
