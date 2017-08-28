@@ -21,7 +21,7 @@ export function loginForm(username,password){
         headers:{'Content-Type':'application/json'},
         timeout:req_timeout
     })
-    .then(resp=>resp.data);
+    .then(resp=>resp);
 }
 
 //Auth Validation

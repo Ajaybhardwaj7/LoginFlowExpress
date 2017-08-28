@@ -19,7 +19,8 @@ router.get('/auth',function(req,res,next){
 router.post('/auth',function(req,res,next){
     //validate username and password.
     var userdetails = global.lookup[req.body.username];
-        if(userdetails.password === req.body.password){
+
+        if(userdetails&&(userdetails.password === req.body.password)){
             //success
             var token = auth.generateToken(req);
             res.status(200);

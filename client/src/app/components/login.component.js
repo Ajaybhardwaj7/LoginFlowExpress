@@ -13,7 +13,7 @@ export default class LoginComponent extends React.Component {
     constructor(props){
         super(props);
 		this.state={
-			username: "Ajay", password:"pass123", errorText:{username:"",password:""},errorMsg:""
+			username: "", password:"", errorText:{username:"",password:""},errorMsg:""
 		}
 		this._binds('onUsernameChange','onPasswordChange','onSubmit','isDisabled');
     }
@@ -74,19 +74,20 @@ export default class LoginComponent extends React.Component {
 	onSubmit(){
 		loginForm(this.state.username,this.state.password)
 		.then(resp=>{
+			resp = resp.data;
 			if(resp.success === true){
 				window.sessionStorage.session=resp.token;
 				window.location = "/";
-			}else{
-				this.setState({errorMsg:"Invalid username or password"})
 			}
-			
 		})
 		.catch(err=>{
-			if(!err.status){
+			if(err.response&&(err.response.status === 401)){
+				this.setState({errorMsg:"Invalid username or password"})
+			}else if(!err.response){
 				alert('Network error');
-			}
-			throw err;
+				throw err;
+			} 
+			
    		 })
 	}
 }
